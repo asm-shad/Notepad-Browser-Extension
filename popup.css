@@ -5,121 +5,368 @@
 }
 
 body {
-  width: 350px;
-  min-height: 400px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #f5f5f5;
+  width: 380px;
+  min-height: 450px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
 }
 
 .container {
-  padding: 15px;
+  padding: 16px;
 }
 
+/* Header */
 h2 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #333;
-  border-bottom: 2px solid #4CAF50;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a2e;
+  border-bottom: 3px solid #4CAF50;
   padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 h3 {
-  font-size: 14px;
-  margin: 15px 0 10px 0;
-  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 12px 0 8px 0;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Search area */
+.search-area {
+  margin-bottom: 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 13px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Stats bar */
+.stats-bar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: 500;
+}
+
+.stats-bar span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 20px;
 }
 
 /* Input area */
 .input-area {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 textarea {
   width: 100%;
   height: 80px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 10px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 13px;
   resize: vertical;
+  transition: all 0.2s ease;
+  line-height: 1.5;
 }
 
 textarea:focus {
   outline: none;
   border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
 }
 
+/* Buttons */
 #saveBtn {
   width: 100%;
-  margin-top: 8px;
-  padding: 8px;
-  background: #4CAF50;
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 #saveBtn:hover {
-  background: #45a049;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+#saveBtn:active {
+  transform: translateY(0);
+}
+
+/* Export area */
+.export-area {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.export-btn, .import-btn {
+  flex: 1;
+  padding: 8px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.export-btn:hover, .import-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.import-btn {
+  background: #FF9800;
+}
+
+.import-btn:hover {
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
 }
 
 /* Notes list */
 .notes-list {
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
+  margin-top: 8px;
+}
+
+/* Custom scrollbar */
+.notes-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notes-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.notes-list::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
 }
 
 #notesContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
+/* Note item - IMPROVED DESIGN */
 .note-item {
   background: white;
-  padding: 10px;
-  border-radius: 4px;
-  border-left: 3px solid #4CAF50;
+  padding: 12px;
+  border-radius: 12px;
+  border-left: 4px solid #4CAF50;
   position: relative;
   word-wrap: break-word;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.note-item:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Note text - IMPROVED FONT */
 .note-text {
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.6;
   color: #333;
-  line-height: 1.4;
-  margin-right: 25px;
+  margin-right: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Timestamp - small and gray */
+.timestamp {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #888;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+/* Bold metadata */
+.note-meta {
+  display: block;
+  font-weight: bold;
+  color: #2c3e50;
+  background: #e8f0fe;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  border-left: 3px solid #4CAF50;
+}
+
+/* Note content */
+.note-content {
+  display: block;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Search highlight */
+mark {
+  background: #FFEB3B;
+  padding: 0 2px;
+  border-radius: 3px;
+  color: #333;
+}
+
+/* Copy button */
+.copy-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 35px;
+  background: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  background: #1976D2;
+}
+
+/* Delete button */
 .delete-btn {
   position: absolute;
-  top: 5px;
+  top: 8px;
   right: 8px;
   background: #ff4444;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
 .delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.05);
   background: #cc0000;
 }
 
+/* Empty message */
 .empty-message {
   text-align: center;
   color: #999;
   font-size: 12px;
-  padding: 20px;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 12px;
+  line-height: 1.6;
+}
+
+/* Add this to make note text display as block (each part on new line) */
+.note-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+  margin-right: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Timestamp - keep on its own line */
+.timestamp {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #888;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  width: fit-content;
+  font-family: monospace;
+}
+
+/* Bold metadata (From "Title":) */
+.note-meta {
+  font-weight: 700;
+  color: #2c3e50;
+  background: #f0f7ff;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: block;
+  font-size: 12px;
+  border-left: 3px solid #4CAF50;
+}
+
+/* Note content - normal weight, on its own line */
+.note-content {
+  display: block;
+  color: #444;
+  line-height: 1.5;
+  padding-left: 4px;
+  margin-top: 4px;
 }

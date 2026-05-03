@@ -1,12 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Notepad",
-  "version": "0.0.1",
+  "version": "2.0.1",
   "description": "Save notes from popup or right-click menu",
   
   "permissions": [
     "storage",
-    "contextMenus"
+    "contextMenus",
+    "downloads"
   ],
   
   "background": {
