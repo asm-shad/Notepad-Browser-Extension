@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Notepad</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📝 My Notes</h2>
+    
+    <!-- Input area for new notes -->
+    <div class="input-area">
+      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+      <button id="saveBtn">➕ Save Note</button>
+    </div>
+    
+    <!-- List of saved notes -->
+    <div class="notes-list">
+      <h3>Saved Notes</h3>
+      <div id="notesContainer">
+        <div class="empty-message">No notes yet. Add one above!</div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="consts.js" type="module"></script>
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

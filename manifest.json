@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Notepad",
+  "version": "0.0.1",
+  "description": "Save notes from popup or right-click menu",
+  
+  "permissions": [
+    "storage",
+    "contextMenus"
+  ],
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "My Notepad"
+  },
+  
+  "icons": {
+    "16": "icons/notes.png",
+    "48": "icons/notepad.png",
+    "128": "icons/notepad.png"
+  }
+}
